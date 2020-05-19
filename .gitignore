@@ -282,3 +282,5 @@ yarn-debug.log*
 yarn-debug.log*
 .yarn-integrity
 .rvmrc
+
+/config/credentials/test.key

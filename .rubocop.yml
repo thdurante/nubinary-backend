@@ -125,3 +125,4 @@ RSpec/NestedGroups:
 Rails/FilePath:
   Exclude:
     - 'spec/rails_helper.rb'
+    - 'config/application.rb'
