@@ -114,6 +114,7 @@ Metrics/ModuleLength:
     - 'spec/**/*.rb'
 
 RSpec/PredicateMatcher:
+  Enabled: false
   EnforcedStyle: explicit
 
 RSpec/MessageSpies:
@@ -121,6 +122,15 @@ RSpec/MessageSpies:
 
 RSpec/NestedGroups:
   Max: 7
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+Rails/LexicallyScopedActionFilter:
+  Enabled: false
 
 Rails/FilePath:
   Exclude:

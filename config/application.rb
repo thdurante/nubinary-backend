@@ -38,5 +38,16 @@ module NubinaryBackend
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
     config.i18n.default_locale = :en
     config.i18n.locale = :en
+
+    # CORS
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins 'http://localhost:3001'
+        resource '/api/*',
+                 headers: %w(Authorization),
+                 methods: :any,
+                 expose: %w(Authorization)
+      end
+    end
   end
 end
