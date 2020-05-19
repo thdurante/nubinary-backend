@@ -57,11 +57,11 @@ RSpec.describe 'Sessions Requests', type: :request do
   end
 
   describe 'Sign Out' do
-    let(:user) { create(:user, email: 'user@sample.com', password: 'password') }
-
     subject(:do_request) do
       delete '/users/sign_out', headers: Devise::JWT::TestHelpers.auth_headers(headers, user)
     end
+
+    let(:user) { create(:user, email: 'user@sample.com', password: 'password') }
 
     it 'returns a no_content response' do
       do_request

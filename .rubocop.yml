@@ -109,6 +109,9 @@ Metrics/ClassLength:
   Exclude:
     - lib/rubocop/config_obsoletion.rb
 
+Metrics/MethodLength:
+  Max: 30
+
 Metrics/ModuleLength:
   Exclude:
     - 'spec/**/*.rb'

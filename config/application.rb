@@ -34,6 +34,11 @@ module NubinaryBackend
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+    # Lib and Services
+    ['lib', 'app/services'].each do |path|
+      config.autoload_paths << Rails.root.join(path)
+    end
+
     # Locales
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
     config.i18n.default_locale = :en
