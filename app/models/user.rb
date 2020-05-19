@@ -3,4 +3,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :lockable, :trackable, :jwt_authenticatable,
          jwt_revocation_strategy: JwtBlacklist
+
+  has_many :string_calculations, dependent: :destroy
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_19_190310) do
+ActiveRecord::Schema.define(version: 2020_05_19_221343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 2020_05_19_190310) do
     t.string "jti", null: false
     t.datetime "exp", null: false
     t.index ["jti"], name: "index_jwt_blacklist_on_jti"
+  end
+
+  create_table "string_calculations", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "source_str", null: false
+    t.string "comparing_str", null: false
+    t.boolean "matching"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_string_calculations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,4 +52,5 @@ ActiveRecord::Schema.define(version: 2020_05_19_190310) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "string_calculations", "users"
 end
