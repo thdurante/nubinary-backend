@@ -48,7 +48,7 @@ module NubinaryBackend
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins 'http://localhost:3001'
-        resource '/api/*',
+        resource '*',
                  headers: %w(Authorization),
                  methods: :any,
                  expose: %w(Authorization)
