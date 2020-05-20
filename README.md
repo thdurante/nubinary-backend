@@ -14,3 +14,7 @@ $ rails s # start server (default port 3000)
 $ rubocop # static code analyzer
 $ rspec # run test suite
 ```
+
+### Insomnia
+
+The insomnia json with all the requests can be found in: `Insomnia_NuBinary_Backend.json`
