@@ -1,24 +1,16 @@
-# README
+# NuBinary - Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Tech challenge for the NuBinary recruiting process.
 
-Things you may want to cover:
+### Installation
 
-* Ruby version
+All the following commands must be executed from the project's root directory:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+$ bundle # install dependencies
+$ cp config/database.yml.sample config/database.yml # database config file (check credentials here)
+$ rails db:create db:migrate # database creation and migration
+$ rails s # start server (default port 3000)
+$ rubocop # static code analyzer
+$ rspec # run test suite
+```
